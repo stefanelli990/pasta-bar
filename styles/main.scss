@@ -179,7 +179,7 @@ h1, h2, h3, p {
         position: relative;
         @include xl {
             @include container(0 1rem, 1200px);
-            height: 800px;
+            
         }
     }
     &__text {
