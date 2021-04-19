@@ -6,6 +6,16 @@
   font-family: 'Cinzel', serif;
 }
 
+html {
+  font-size: 0.9rem;
+}
+
+@media (min-width: 600px) {
+  html {
+    font-size: 1rem;
+  }
+}
+
 body {
   background-color: #F6F6F6;
   letter-spacing: 1px;
@@ -41,16 +51,24 @@ h3 {
 }
 
 h1, h2, h3, p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .btn, .btn-ghost {
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: inline-block;
-  width: 100%;
-  max-width: 200px;
   text-align: center;
   border: 1px solid #DBA859;
+}
+
+.logo img {
+  width: 7rem;
+}
+
+@media (min-width: 768px) {
+  .logo img {
+    width: 10rem;
+  }
 }
 
 .btn {
@@ -70,16 +88,23 @@ h1, h2, h3, p {
   background-color: transparent;
 }
 
-.heading {
-  margin-bottom: 4rem;
-  text-align: center;
+.btn-ghost:hover {
+  background-color: #DBA859;
+  color: #1B1B1B;
 }
 
-.heading h2 {
+.above-heading {
   margin-bottom: 0;
   color: #DBA859;
   font-family: 'Tangerine', cursive;
   font-size: 2rem;
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 4rem;
+  text-align: center;
+  font-weight: 900;
 }
 
 .navbar {
@@ -106,10 +131,10 @@ h1, h2, h3, p {
           align-items: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .navbar__container {
     padding: 1rem;
-    max-width: 1200px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
   }
@@ -119,7 +144,7 @@ h1, h2, h3, p {
   display: none;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .navbar__nav-links {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -132,14 +157,14 @@ h1, h2, h3, p {
 }
 
 .showcase {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(246, 246, 246, 0.8)), to(rgba(246, 246, 246, 0.8))), url("../images/landing-image.jpg");
-  background-image: linear-gradient(rgba(246, 246, 246, 0.8), rgba(246, 246, 246, 0.8)), url("../images/landing-image.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(246, 246, 246, 0.85)), to(rgba(246, 246, 246, 0.85))), url("../images/landing-image.jpg");
+  background-image: linear-gradient(rgba(246, 246, 246, 0.85), rgba(246, 246, 246, 0.85)), url("../images/landing-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .showcase {
     background-image: unset;
   }
@@ -154,10 +179,10 @@ h1, h2, h3, p {
   position: relative;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .showcase__container {
     padding: 0 1rem;
-    max-width: 1200px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
   }
@@ -173,16 +198,16 @@ h1, h2, h3, p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
   height: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .showcase__text {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -197,7 +222,7 @@ h1, h2, h3, p {
   line-height: 1.2;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .showcase__text h1 {
     font-size: 5rem;
   }
@@ -218,7 +243,7 @@ h1, h2, h3, p {
   z-index: -5;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 768px) {
   .showcase__image {
     display: block;
   }
@@ -234,7 +259,7 @@ h1, h2, h3, p {
 @media (min-width: 1200px) {
   .menu__container {
     padding: 10rem 1rem 0;
-    max-width: 1200px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
   }
@@ -308,7 +333,7 @@ h1, h2, h3, p {
 @media (min-width: 1200px) {
   .about__container {
     padding: 10rem 1rem;
-    max-width: 1200px;
+    max-width: 960px;
     width: 100%;
     margin: 0 auto;
   }
@@ -432,11 +457,6 @@ h1, h2, h3, p {
   .contact__heading .heading {
     text-align: left;
   }
-}
-
-.contact__contact-info {
-  padding: 2rem;
-  background-color: rgba(27, 27, 27, 0.7);
 }
 
 .contact__contact-info h3 {
