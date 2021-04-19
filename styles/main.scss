@@ -12,7 +12,7 @@
 }
 
 html {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     @include sm {
         font-size: 1rem;
     }
@@ -64,7 +64,7 @@ h1, h2, h3, p {
 .logo {
     img {
         width: 7rem;
-        @include md {
+        @include xl {
             width: 10rem;
         }
     }
@@ -113,30 +113,52 @@ h1, h2, h3, p {
 // navbar
 
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 5;
+    background-color: $light;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    @include xl {
+        position: absolute;
+        background-color: transparent;
+        box-shadow: none;
+    }
     &__container {
         @include container(1rem, 600px);
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include md {
-            @include container(1rem, 960px);
+        @include xl {
+            @include container(1rem, 1200px);
         }
     }
 
     &__nav-links {
         display: none;
-        @include md {
+        @include xl {
             display: flex;
         }
     }
     &__nav-link {
         margin-right: 1.5rem;
         
+    }
+
+    &__toggle {
+        .bar1,
+        .bar2,
+        .bar3 {
+        width: 25px;
+        height: 2px;
+        background-color: $dark;
+        margin: 7px 0;
+        transition: $transition;
+    }
+    @include xl {
+    display: none;
+        }
     }
     
 }
@@ -148,15 +170,15 @@ h1, h2, h3, p {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        @include md {
+        @include xl {
             background-image: unset;
         }
     &__container {
         @include container(0 1rem, 600px);
         height: 100vh;
         position: relative;
-        @include md {
-            @include container(0 1rem, 960px);
+        @include xl {
+            @include container(0 1rem, 1200px);
         }
     }
     &__text {
@@ -166,16 +188,17 @@ h1, h2, h3, p {
        text-align: center;
        flex-direction: column;
        height: 100%;
-       max-width: 500px;
-        @include md {
+       
+        @include xl {
             align-items: flex-start;
             text-align: left; 
+            max-width: 500px;
         }
        h1 {
            font-size: 2.5rem;
            font-weight: 900;
            line-height: 1.2;
-           @include md {
+           @include xl {
             font-size: 5rem; 
            }
        }
@@ -194,7 +217,7 @@ h1, h2, h3, p {
         height: 100%;
         width: 70%;
         z-index: -5;
-        @include md {
+        @include xl {
             display: block;
         }
     }
@@ -206,7 +229,7 @@ h1, h2, h3, p {
     &__container {
         @include container(5rem 1rem 0, 600px);
         @include xl {
-            @include container(10rem 1rem 0,  960px);
+            @include container(10rem 1rem 0,  1200px);
         }
     }
 
@@ -223,7 +246,6 @@ h1, h2, h3, p {
     &__item {
         display: flex;
         border-bottom: 1px solid #DBDBDB;
-        
     }
 
     &__item-image {
