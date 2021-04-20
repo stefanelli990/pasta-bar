@@ -32,7 +32,7 @@ a {
     text-decoration: none;
     font-weight: 700;
     transition: $transition;
-    color: $dark;
+    color: $light;
         &:hover {
                 color: $primary;
             }
@@ -71,7 +71,7 @@ h1, h2, h3, p {
 }
 .btn {
     @extend %btn;
-    color: $dark;
+    color: $light;
     background-color: $primary;
     
     transition: $transition;
@@ -159,7 +159,11 @@ h1, h2, h3, p {
     }
     &__nav-link {
         margin-right: 1.5rem;
-        
+        &.active {
+          
+                color: $dark;
+          
+        }
     }
 
     &__toggle {
@@ -196,9 +200,10 @@ h1, h2, h3, p {
         height: 100vh;
         position: relative;
         @include xl {
-            @include container(0 1rem, 1200px);
-            
+            @include container(0 1rem, 1200px); 
+            height: 1000px;
         }
+       
     }
     &__text {
        display: flex;

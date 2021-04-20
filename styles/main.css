@@ -31,7 +31,7 @@ a {
   font-weight: 700;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  color: #1B1B1B;
+  color: #F6F6F6;
 }
 
 a:hover {
@@ -72,7 +72,7 @@ h1, h2, h3, p {
 }
 
 .btn {
-  color: #1B1B1B;
+  color: #F6F6F6;
   background-color: #DBA859;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -199,6 +199,10 @@ h1, h2, h3, p {
   margin-right: 1.5rem;
 }
 
+.navbar__nav-link.active {
+  color: #1B1B1B;
+}
+
 .navbar__toggle .bar1,
 .navbar__toggle .bar2,
 .navbar__toggle .bar3 {
@@ -245,6 +249,7 @@ h1, h2, h3, p {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    height: 1000px;
   }
 }
 

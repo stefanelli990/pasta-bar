@@ -34,3 +34,9 @@
         @content;
     }
 }
+
+@mixin mediaQuery($px) {
+    @media(min-width: $px) {
+        @content;
+    }
+}
