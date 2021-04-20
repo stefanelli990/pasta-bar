@@ -120,10 +120,26 @@ h1, h2, h3, p {
     z-index: 5;
     background-color: $light;
     box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    &.active {
+        position: fixed;
+        background: $light;
+        box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+        animation: nav-animation 0.5s;
+
+        @keyframes nav-animation {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0%);
+            }
+        }
+    }
     @include xl {
         position: absolute;
         background-color: transparent;
         box-shadow: none;
+        
     }
     &__container {
         @include container(1rem, 600px);
@@ -162,6 +178,8 @@ h1, h2, h3, p {
     }
     
 }
+
+
 
 //showcase 
 
@@ -393,7 +411,7 @@ h1, h2, h3, p {
         @include container(3rem 1rem, 1200px);
         border-bottom: 1px solid #494949;
     }
-
+  
     &__bottom {
         padding: 2rem;
         color: $light;
