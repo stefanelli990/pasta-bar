@@ -63,7 +63,7 @@ h1, h2, h3, p {
 
 .logo {
     img {
-        width: 8rem;
+        width: 9rem;
         @include xl {
             width: 10rem;
         }
@@ -86,11 +86,7 @@ h1, h2, h3, p {
     @extend %btn;
     color: $primary;
     background-color: transparent;
-    &:hover {
-        background-color: $primary;
-        color: $dark;
-        
-    }
+    
 }
 
 
@@ -113,13 +109,12 @@ h1, h2, h3, p {
 // navbar
 
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 5;
-    background-color: $light;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    
     &.active {
         position: fixed;
         background: $light;
@@ -158,15 +153,14 @@ h1, h2, h3, p {
         }
     }
     &__nav-link {
-        margin-right: 1.5rem;
-        &.active {
-          
-                color: $dark;
-          
-        }
+        margin-left: 1.5rem;
+        color: $dark;
     }
 
     &__toggle {
+        padding: 0.5rem 1rem;
+        border: 1px solid #DBDBDB;
+        border-radius: 5px;
         .bar1,
         .bar2,
         .bar3 {
@@ -251,9 +245,9 @@ h1, h2, h3, p {
 
 .menu {
     &__container {
-        @include container(5rem 1rem 0, 600px);
+        @include container(5rem 1rem, 600px);
         @include xl {
-            @include container(10rem 1rem 0,  1200px);
+            @include container(10rem 1rem,  1200px);
         }
     }
 
@@ -273,6 +267,8 @@ h1, h2, h3, p {
     }
 
     &__item-image {
+        
+
         img {
             width: 60px;
             height: 60px;
@@ -280,6 +276,7 @@ h1, h2, h3, p {
             object-fit: cover;
             margin-right: 1rem;
         }
+        
     }
     &__item-text {
         display: flex;
@@ -295,14 +292,36 @@ h1, h2, h3, p {
     }
 }
 
+.divider {
+    background-color: lighten($primary, 10);
+    &__container {
+        @include container(5rem 1rem, 600px);
+        @include xl {
+            @include container(5rem 1rem, 1200px);
+        }
+    }
+    &__items {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        @include xl {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    img {
+        margin-bottom: 1rem;
+    }
+}
+
 //about
 
 .about {
     
     &__container {
-        @include container(5rem 1rem 0, 600px);
+        @include container(5rem 1rem, 600px);
         @include xl {
-            @include container(10rem 1rem 0, 1200px);
+            @include container(10rem 1rem, 1200px);
         }
         display: flex;
         flex-direction: column;
@@ -351,6 +370,25 @@ h1, h2, h3, p {
         }
     }
     
+}
+
+
+//services
+
+.reservation {
+    background-image: linear-gradient(rgba($dark,0.6), rgba($dark, 0.6)), url('../images/services-image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+        &__container {
+            text-align: center;
+            color: $light;
+            @include container(5rem 1rem, 600px);
+            @include xl {
+                @include container(10rem 1rem, 1200px);
+            }
+        }
 }
 
 //contact
