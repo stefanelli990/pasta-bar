@@ -160,7 +160,7 @@ h1, h2, h3, p {
     &__toggle {
         padding: 0.5rem 1rem;
         border: 1px solid #DBDBDB;
-        border-radius: 5px;
+        border-radius: 2px;
         .bar1,
         .bar2,
         .bar3 {
@@ -441,6 +441,16 @@ h1, h2, h3, p {
 
     &__map {
      flex: 2;
+     display: none;
+     @include xl {
+         display: block;
+     }
+    }
+}
+
+.mobile-map {
+    @include xl {
+        display: none;
     }
 }
 
