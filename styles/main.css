@@ -642,7 +642,12 @@ h1, h2, h3, p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+}
+
+@media (min-width: 1200px) {
+  .reservation {
+    background-attachment: fixed;
+  }
 }
 
 .reservation__container {

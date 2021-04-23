@@ -466,7 +466,10 @@ h1, h2, h3, p {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    @include xl {
+        background-attachment: fixed;
+    }
+    
         &__container {
             text-align: center;
             color: $light;
