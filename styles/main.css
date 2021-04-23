@@ -120,33 +120,39 @@ h1, h2, h3, p {
     background-color: transparent;
     -webkit-box-shadow: none;
             box-shadow: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-animation: navbarAnimation 1.5s forwards;
+            animation: navbarAnimation 1.5s forwards;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
   .navbar.active {
     position: fixed;
     background: #F6F6F6;
     -webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
             box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
-    -webkit-animation: nav-animation 0.5s;
-            animation: nav-animation 0.5s;
   }
-  @-webkit-keyframes nav-animation {
+  @-webkit-keyframes navbarAnimation {
     0% {
       -webkit-transform: translateY(-100%);
               transform: translateY(-100%);
     }
     100% {
-      -webkit-transform: translateY(0%);
-              transform: translateY(0%);
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
     }
   }
-  @keyframes nav-animation {
+  @keyframes navbarAnimation {
     0% {
       -webkit-transform: translateY(-100%);
               transform: translateY(-100%);
     }
     100% {
-      -webkit-transform: translateY(0%);
-              transform: translateY(0%);
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
     }
   }
 }
@@ -321,6 +327,35 @@ h1, h2, h3, p {
             align-items: flex-start;
     text-align: left;
     max-width: 500px;
+    -webkit-animation: showText 2s ease forwards;
+            animation: showText 2s ease forwards;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+    opacity: 0;
+  }
+  @-webkit-keyframes showText {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-20%);
+              transform: translateX(-20%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+  }
+  @keyframes showText {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-20%);
+              transform: translateX(-20%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
   }
 }
 
@@ -364,6 +399,7 @@ h1, h2, h3, p {
     bottom: 0;
     height: 100%;
     width: 100%;
+    z-index: -5;
     background-color: #F6F6F6;
     -webkit-animation: reveal   2s ease forwards;
             animation: reveal   2s ease forwards;

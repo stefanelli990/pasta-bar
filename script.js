@@ -6,7 +6,7 @@ const hamburgerMenu = document.querySelector('.hamburger-menu');
 
 //scroll navbar animation
 window.addEventListener('scroll', () => {
-    if(window.pageYOffset > 500) {
+    if(window.pageYOffset > 1) {
         navbar.classList.add('active');
     } else {
         navbar.classList.remove('active');

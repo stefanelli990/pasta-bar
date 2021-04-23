@@ -123,19 +123,21 @@ h1, h2, h3, p {
         position: absolute;
         background-color: transparent;
         box-shadow: none;
+        transition: $transition;
         &.active {
             position: fixed;
             background: $light;
-            box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-            animation: nav-animation 0.5s;
-    
-            @keyframes nav-animation {
-                0% {
-                    transform: translateY(-100%);
-                }
-                100% {
-                    transform: translateY(0%);
-                }
+            box-shadow: 0 2px 2px -2px rgba(0,0,0,.2); 
+        }
+        animation: navbarAnimation 1.5s forwards;
+        animation-delay: 2s;
+        transform: translateY(-100%);
+        @keyframes navbarAnimation {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
             }
         }
     }
@@ -254,6 +256,19 @@ h1, h2, h3, p {
             align-items: flex-start;
             text-align: left; 
             max-width: 500px;
+            animation: showText 2s ease forwards;
+            animation-delay: 1.5s;
+            opacity: 0;
+                @keyframes showText {
+                    0% {
+                        opacity: 0;
+                        transform: translateX(-20%);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
         }
        h1 {
            font-size: 2.5rem;
@@ -290,6 +305,7 @@ h1, h2, h3, p {
                 bottom: 0;
                 height: 100%;
                 width: 100%;
+                z-index: -5;
                 background-color: $light;
                 animation: reveal   2s ease forwards;
             } 
