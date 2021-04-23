@@ -360,29 +360,29 @@ h1, h2, h3, p {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     height: 100%;
     width: 100%;
     background-color: #F6F6F6;
-    -webkit-animation: reveal 2s ease forwards;
-            animation: reveal 2s ease forwards;
+    -webkit-animation: reveal   2s ease forwards;
+            animation: reveal   2s ease forwards;
   }
-}
-
-@-webkit-keyframes reveal {
-  0% {
-    width: 100%;
+  @-webkit-keyframes reveal {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
   }
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes reveal {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
+  @keyframes reveal {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
   }
 }
 
