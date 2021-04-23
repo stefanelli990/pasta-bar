@@ -355,6 +355,35 @@ h1, h2, h3, p {
   .showcase__image {
     display: block;
   }
+  .showcase__image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #F6F6F6;
+    -webkit-animation: reveal 2s ease forwards;
+            animation: reveal 2s ease forwards;
+  }
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 .menu__container {

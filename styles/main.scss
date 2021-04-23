@@ -280,8 +280,30 @@ h1, h2, h3, p {
         z-index: -5;
         @include xl {
             display: block;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: $light;
+                animation: reveal 2s ease forwards;
+            }    
         }
+        @keyframes reveal {
+      
+            0% {
+                width: 100%
+            }
+            100% {
+                width: 0;
+            }
+        
     }
+    }
+
+    
 }
 
 //menu 
