@@ -234,7 +234,7 @@ h1, h2, h3, p {
 }
 
 .hamburger-menu__navlink {
-  padding: 1rem 0 1rem 2rem;
+  padding: 1rem;
   width: 100%;
   display: block;
   -webkit-transition: all 0.3s ease;
@@ -409,8 +409,8 @@ h1, h2, h3, p {
     width: 100%;
     z-index: -5;
     background-color: #F6F6F6;
-    -webkit-animation: reveal   2s ease forwards;
-            animation: reveal   2s ease forwards;
+    -webkit-animation: reveal   3s ease forwards;
+            animation: reveal   3s ease forwards;
   }
   @-webkit-keyframes reveal {
     0% {
@@ -637,8 +637,8 @@ h1, h2, h3, p {
 }
 
 .reservation {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 27, 27, 0.6)), to(rgba(27, 27, 27, 0.6))), url("../images/services-image.jpg");
-  background-image: linear-gradient(rgba(27, 27, 27, 0.6), rgba(27, 27, 27, 0.6)), url("../images/services-image.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(27, 27, 27, 0.6)), to(rgba(27, 27, 27, 0.6))), url("../images/reservation-image.jpg");
+  background-image: linear-gradient(rgba(27, 27, 27, 0.6), rgba(27, 27, 27, 0.6)), url("../images/reservation-image.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

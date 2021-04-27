@@ -194,7 +194,7 @@ h1, h2, h3, p {
     }
 
     &__navlink {
-        padding: 1rem 0 1rem 2rem;
+        padding: 1rem;
         width: 100%;
         display: block;
         transition: $transition;
@@ -254,6 +254,7 @@ h1, h2, h3, p {
        flex-direction: column;
        height: 100%;
        
+       
         @include xl {
             align-items: flex-start;
             text-align: left; 
@@ -309,7 +310,7 @@ h1, h2, h3, p {
                 width: 100%;
                 z-index: -5;
                 background-color: $light;
-                animation: reveal   2s ease forwards;
+                animation: reveal   3s ease forwards;
             } 
             @keyframes reveal {
       
@@ -459,10 +460,9 @@ h1, h2, h3, p {
 }
 
 
-//services
-
+//reservation
 .reservation {
-    background-image: linear-gradient(rgba($dark,0.6), rgba($dark, 0.6)), url('../images/services-image.jpg');
+    background-image: linear-gradient(rgba($dark,0.6), rgba($dark, 0.6)), url('../images/reservation-image.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
