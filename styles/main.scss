@@ -219,20 +219,11 @@ h1, h2, h3, p {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        animation: revealBg 1s ease;
         
-        @keyframes revealBg {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
         @include xl {
             background-image: unset;
         }
-    &__container {
+        &__container {
         @include container(0 1rem, 600px);
         height: 100vh;
         position: relative;
@@ -260,7 +251,7 @@ h1, h2, h3, p {
             text-align: left; 
             max-width: 500px;
             animation: showText 2s ease forwards;
-            animation-delay: 2s;
+            animation-delay: 1s;
             opacity: 0;
                 @keyframes showText {
                     0% {
@@ -298,23 +289,15 @@ h1, h2, h3, p {
         z-index: -5;
         @include xl {
             display: block;
-            
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: -5;
-                background-color: $light;
-                animation: reveal   3s ease forwards;
-            } 
+            animation: reveal 2s ease forwards;
+
             @keyframes reveal {
       
                 0% {
-                    width: 100%
+                    opacity: 0;
                 }
                 100% {
-                    width: 0;
+                    opacity: 1;
                 }
             }   
         }

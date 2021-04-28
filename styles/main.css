@@ -258,26 +258,6 @@ h1, h2, h3, p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  -webkit-animation: revealBg 1s ease;
-          animation: revealBg 1s ease;
-}
-
-@-webkit-keyframes revealBg {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes revealBg {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -337,8 +317,8 @@ h1, h2, h3, p {
     max-width: 500px;
     -webkit-animation: showText 2s ease forwards;
             animation: showText 2s ease forwards;
-    -webkit-animation-delay: 2s;
-            animation-delay: 2s;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
     opacity: 0;
   }
   @-webkit-keyframes showText {
@@ -397,31 +377,23 @@ h1, h2, h3, p {
 @media (min-width: 1200px) {
   .showcase__image {
     display: block;
-  }
-  .showcase__image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -5;
-    background-color: #F6F6F6;
-    -webkit-animation: reveal   3s ease forwards;
-            animation: reveal   3s ease forwards;
+    -webkit-animation: reveal 2s ease forwards;
+            animation: reveal 2s ease forwards;
   }
   @-webkit-keyframes reveal {
     0% {
-      width: 100%;
+      opacity: 0;
     }
     100% {
-      width: 0;
+      opacity: 1;
     }
   }
   @keyframes reveal {
     0% {
-      width: 100%;
+      opacity: 0;
     }
     100% {
-      width: 0;
+      opacity: 1;
     }
   }
 }
