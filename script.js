@@ -1,6 +1,7 @@
 const toggle = document.querySelector('.navbar__toggle');
 const hamburgerMenu = document.querySelector('.hamburger-menu');
-
+const loader = document.querySelector('.loader');
+const body = document.querySelector('body');
 
 //hamburger menu toggle
 toggle.addEventListener('click', () => {
@@ -12,4 +13,9 @@ toggle.addEventListener('click', () => {
     } 
   });
 
+  //loader
+  setTimeout(() => {
+    loader.classList.add('active');
+    body.style.overflowY = 'visible';
+}, 2000);
 

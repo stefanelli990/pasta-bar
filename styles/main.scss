@@ -8,7 +8,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cinzel', serif;
-    
 }
 
 html {
@@ -22,7 +21,8 @@ html {
 body {
     background-color: $light;
     letter-spacing: 1px;
-    line-height: 1.5;
+    line-height: 1.6;
+    overflow-y: hidden;
 }
 
 li {
@@ -52,7 +52,7 @@ h1 {
   }
 
 h1, h2, h3, p {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 %btn {
@@ -70,6 +70,7 @@ h1, h2, h3, p {
         }
     }
 }
+
 .btn {
     @extend %btn;
     color: $light;
@@ -105,7 +106,60 @@ h1, h2, h3, p {
     font-weight: 900;
 }
 
+//loader
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $light;
+    color: $dark;
+	height: 100vh;
+	width: 100%;
+	z-index: 800;
+	opacity: 1;
+	transition: .5s;
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    &.active {
+        opacity: 0;
+        visibility: hidden;
+    }
 
+  .spinner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 8px solid transparent;
+      border-top-color: lighten($primary, 10);
+      border-radius: 50%;
+      animation: spinnerOne 1.2s linear infinite;
+
+      &:nth-child(2) {
+        border: 8px solid transparent;
+        border-bottom-color: lighten($primary, 10);
+        animation: spinnerTwo 1.2s linear infinite;
+      }
+    }
+    @keyframes spinnerOne {
+      0% { transform: rotate(0deg); border-width: 10px; }
+      50% { transform: rotate(180deg); border-width: 1px; }
+      100% { transform: rotate(360deg); border-width: 10px; }
+    }
+    @keyframes spinnerTwo {
+      0% { transform: rotate(0deg); border-width: 1px; }
+      50% { transform: rotate(180deg); border-width: 10px; }
+      100% { transform: rotate(360deg); border-width: 1px; }
+    }
+  }
+}
 
 // navbar
 .navbar {
@@ -116,14 +170,9 @@ h1, h2, h3, p {
     left: 0;
     right: 0;
     z-index: 5;
-    
-
-    @include xl {
-        position: absolute;
-        background-color: transparent;
-        box-shadow: none;
-        animation: navbarAnimation 1.5s ease forwards;
-   
+    animation: navbarAnimation 2s ease forwards;
+        animation-delay: 4s;
+        transform: translateY(-100%);
         @keyframes navbarAnimation {
             0% {
                 transform: translateY(-100%);
@@ -132,6 +181,12 @@ h1, h2, h3, p {
                 transform: translateY(0);
             }
         }
+
+    @include xl {
+        position: absolute;
+        background-color: transparent;
+        box-shadow: none;
+        
     }
     &__container {
         @include container(1rem, 600px);
@@ -176,7 +231,6 @@ h1, h2, h3, p {
 }
 
 // hamburger menu
-
 .hamburger-menu {
     position: fixed;
     top: 74px;
@@ -213,9 +267,8 @@ h1, h2, h3, p {
 
 
 //showcase 
-
 .showcase {
-        background-image: linear-gradient(rgba($light,0.85), rgba($light, 0.85)), url('../images/landing-image.jpg');
+        background-image: linear-gradient(rgba($light,0.9), rgba($light, 0.9)), url('../images/landing-image.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -235,8 +288,8 @@ h1, h2, h3, p {
         @include mediaQuery(2000px) {
             height: 1000px;
         }
-       
     }
+
     &__text {
        display: flex;
        justify-content: center;
@@ -244,25 +297,25 @@ h1, h2, h3, p {
        text-align: center;
        flex-direction: column;
        height: 100%;
-       
-       
-        @include xl {
-            align-items: flex-start;
-            text-align: left; 
-            max-width: 500px;
-            animation: showText 2s ease forwards;
-            animation-delay: 1s;
-            opacity: 0;
+       animation: showText 2s ease forwards;
+       animation-delay: 3.5s;
+       opacity: 0;
                 @keyframes showText {
                     0% {
                         opacity: 0;
-                        transform: translateX(-10%);
+                        transform: translateX(-50px);
                     }
                     100% {
                         opacity: 1;
                         transform: translateX(0);
                     }
                 }
+       
+        @include xl {
+            align-items: flex-start;
+            text-align: left; 
+            max-width: 500px;
+            
         }
 
        h1 {
@@ -276,34 +329,33 @@ h1, h2, h3, p {
     }
 
     &__image {
-        display: none;
+        visibility: hidden;
         position: absolute;
         top: 0;
         right: 0;
-        background-image: linear-gradient(rgba($light,0.2), rgba($light, 0.2)), url('../images/landing-image.jpg');
+        background-image: linear-gradient(rgba($light,0.2), rgba($light, 0.2)), url('../images/landing-image2.jpg');
         background-repeat: no-repeat;
         background-position: left;
         background-size: cover;
         height: 100%;
         width: 70%;
         z-index: -5;
+        animation: show-image 2s ease forwards;
+        animation-delay: 2.5s;
+        opacity: 0;
+                @keyframes show-image {
+                    0% {
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }
+                    100% {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
         @include xl {
-            display: block;
-            animation: reveal 2s ease forwards;
-
-            @keyframes reveal {
-      
-                0% {
-                    opacity: 0;
-                    transform: translateY(-100px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }   
-        }
-        
+            visibility: visible; 
+        } 
     }
 
     
@@ -378,7 +430,7 @@ h1, h2, h3, p {
         }
     }
     img {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -391,12 +443,14 @@ h1, h2, h3, p {
         @include xl {
             @include container(10rem 1rem, 1200px);
         }
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 2rem;
         @include xl {
-            flex-direction: row;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 4rem;
         }
-        gap: 2rem;
+        
     }
 
     &__image {
