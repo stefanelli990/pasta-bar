@@ -11,7 +11,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     font-size: 0.8rem;
     @include xl {
         font-size: 1rem;
@@ -25,13 +25,16 @@ body {
     overflow-y: hidden;
 }
 
+ul {
+    display: flex;
+}
+
 li {
     list-style: none;
 }
 
 a {
     text-decoration: none;
-    font-weight: 700;
     transition: $transition;
     color: $light;
         &:hover {
@@ -55,6 +58,10 @@ h1, h2, h3, p {
     margin-bottom: 2rem;
 }
 
+p {
+    color: $grey;
+}
+
 %btn {
     padding: 1rem 2rem;
     display: inline-block;
@@ -64,10 +71,7 @@ h1, h2, h3, p {
 
 .logo {
     img {
-        width: 9rem;
-        @include xl {
             width: 10rem;
-        }
     }
 }
 
@@ -75,7 +79,6 @@ h1, h2, h3, p {
     @extend %btn;
     color: $light;
     background-color: $primary;
-    
     transition: $transition;
     &:hover {
         background-color: transparent;
@@ -164,8 +167,7 @@ h1, h2, h3, p {
 // navbar
 .navbar {
     background-color: $light;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -183,87 +185,67 @@ h1, h2, h3, p {
         }
 
     @include xl {
-        position: absolute;
         background-color: transparent;
-        box-shadow: none;
-        
     }
+
     &__container {
-        @include container(1rem, 600px);
+        @include container(1.5rem 1rem, 600px);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        @include xl {
-            @include container(1rem, 1200px);
+        @include sm {
+            justify-content: space-between;
+            @include container(1.5rem 1rem, 1200px);
         }
     }
 
+    
+
     &__nav-links {
         display: none;
-        @include xl {
+        @include sm {
             display: flex;
         }
     }
     &__nav-link {
         margin-left: 1.5rem;
-        color: $dark;
+        color: $grey;
+        font-weight: 700;
     }
-
-    &__toggle {
-        padding: 0.5rem 1rem;
-        border: 1px solid #DBDBDB;
-        border-radius: 2px;
-        cursor: pointer;
-        .bar1,
-        .bar2,
-        .bar3 {
-        width: 25px;
-        height: 2px;
-        background-color: $dark;
-        margin: 7px 0;
-        transition: $transition;
-    }
-    @include xl {
-    display: none;
-        }
-    }
-    
 }
 
-// hamburger menu
-.hamburger-menu {
+
+.bottom-navigation {
     position: fixed;
-    top: 74px;
+    bottom: 0;
     left: 0;
     right: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: $transition;
-    background-color: darken($light, 2);
-    z-index: 100;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-
-    &__navlinks {
-        @include container(0, 600px);
-    }
-
-    &__navlink {
-        padding: 1rem;
+    z-index: 10;
+    background-color: $dark;
+    ul {
+    padding: 1rem;
+    justify-content: space-between;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        display: block;
-        transition: $transition;
-        color: $dark;
-        &:hover {
-        
-          color: $primary;
-        }
       }
-    
-    @include xl {
-        display: none;
     }
-}
-
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     
+    }
+    i {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    @include sm {
+      display: none;
+    }
+  }
 
 
 //showcase 
@@ -272,11 +254,12 @@ h1, h2, h3, p {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        
+        overflow-x: hidden;
         @include xl {
             background-image: unset;
         }
         &__container {
+        
         @include container(0 1rem, 600px);
         height: 100vh;
         position: relative;
@@ -291,6 +274,7 @@ h1, h2, h3, p {
     }
 
     &__text {
+       margin-top: -2rem;
        display: flex;
        justify-content: center;
        align-items: center;
@@ -310,7 +294,9 @@ h1, h2, h3, p {
                         transform: translateX(0);
                     }
                 }
-       
+        @include sm {
+            margin-top: 0;
+                     }
         @include xl {
             align-items: flex-start;
             text-align: left; 
@@ -319,11 +305,11 @@ h1, h2, h3, p {
         }
 
        h1 {
-           font-size: 2.5rem;
+           font-size: 3rem;
            font-weight: 900;
            line-height: 1;
            @include xl {
-            font-size: 6rem; 
+            font-size: 5rem; 
            }
        }
     }
@@ -334,11 +320,10 @@ h1, h2, h3, p {
         top: 0;
         right: 0;
         background-image: linear-gradient(rgba($light,0.2), rgba($light, 0.2)), url('../images/landing-image2.jpg');
-        background-repeat: no-repeat;
-        background-position: left;
+        background-position: -50px 0;
         background-size: cover;
         height: 100%;
-        width: 70%;
+        width: 75%;
         z-index: -5;
         animation: show-image 2s ease forwards;
         animation-delay: 2.5s;
@@ -346,7 +331,7 @@ h1, h2, h3, p {
                 @keyframes show-image {
                     0% {
                         opacity: 0;
-                        transform: translateX(50px);
+                        transform: translateX(100px);
                     }
                     100% {
                         opacity: 1;
@@ -390,11 +375,11 @@ h1, h2, h3, p {
         
 
         img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
         }
         
     }
@@ -406,7 +391,7 @@ h1, h2, h3, p {
     }
     &__item-left {
         width: 80%;
-        h3 {
+        h2 {
             margin-bottom: 0.5rem;
         }
     }
@@ -541,6 +526,9 @@ h1, h2, h3, p {
     &__contact-info {
         flex: 1;
         text-align: center;
+        ul {
+            display: block;
+        }
         @include xl {
             text-align: left;
         }
