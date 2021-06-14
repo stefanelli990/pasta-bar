@@ -11,7 +11,7 @@
 }
 
 html {
-    // scroll-behavior: smooth;
+    scroll-behavior: smooth;
     font-size: 0.8rem;
     @include xl {
         font-size: 1rem;
@@ -59,8 +59,11 @@ h1 {
     font-size: 1.17rem;
   }
 
+
+
 h1, h2, h3, p {
     margin-bottom: 1.5rem;
+    
 }
 
 
@@ -103,7 +106,6 @@ h1, h2, h3, p {
     margin-bottom: 0;
     color: $primary;
     font-family: 'Tangerine', cursive;
-    font-size: 2rem;
     text-align: center;
 }
 
@@ -370,7 +372,7 @@ h1, h2, h3, p {
 
     &__item {
         display: flex;
-       
+        border-bottom: 1px solid gainsboro;
     }
 
     &__item-image {
