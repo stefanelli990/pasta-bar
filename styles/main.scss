@@ -20,6 +20,7 @@ html {
 
 body {
     background-color: $light;
+    color: $dark;
     letter-spacing: 1px;
     line-height: 1.6;
     overflow-y: hidden;
@@ -59,7 +60,7 @@ h1 {
   }
 
 h1, h2, h3, p {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 
@@ -401,7 +402,7 @@ h1, h2, h3, p {
 }
 
 .divider {
-    background-color: lighten($primary, 30);
+    background-color: lighten($primary, 20);
     &__container {
         @include container(5rem 1rem, 600px);
         @include xl {
