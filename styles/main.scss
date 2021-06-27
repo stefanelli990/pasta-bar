@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Cinzel', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -40,6 +40,7 @@ li {
 
 a {
     text-decoration: none;
+    font-weight: 500;
     transition: $transition;
     color: $light;
         &:hover {
@@ -51,28 +52,35 @@ h1 {
     font-size: 2rem;
   }
   
-  h2 {
+h2 {
     font-size: 1.5rem;
   }
   
-  h3 {
+h3 {
     font-size: 1.17rem;
   }
 
 
+h1, h2 {
+    font-family: 'Cinzel', serif;
+  }
 
 h1, h2, h3, p {
     margin-bottom: 1.5rem;
     
 }
 
-
+small {
+    font-weight: 300;
+}
 
 %btn {
     padding: 1rem 2rem;
     display: inline-block;
     text-align: center;
     border: 1px solid $primary;
+    border-radius: 30px;
+    font-weight: 400;
 }
 
 .logo {
@@ -86,7 +94,7 @@ h1, h2, h3, p {
     color: $light;
     background-color: $primary;
     transition: $transition;
-    font-weight: 700;
+   
     &:hover {
         background-color: transparent;
         color: $primary;
@@ -105,8 +113,8 @@ h1, h2, h3, p {
 .above-heading {
     margin-bottom: 0;
     color: $primary;
-    font-family: 'Tangerine', cursive;
     text-align: center;
+    
 }
 
 .heading {
@@ -216,7 +224,6 @@ h1, h2, h3, p {
     &__nav-link {
         margin-left: 1.5rem;
         color: $dark;
-        font-weight: 700;
     }
 }
 
@@ -242,7 +249,7 @@ h1, h2, h3, p {
       display: flex;
       flex-direction: column;
       align-items: center;
-        font-weight: 700;
+        
     }
     i {
       margin-bottom: 0.5rem;
@@ -312,11 +319,14 @@ h1, h2, h3, p {
 
        h1 {
            font-size: 3rem;
-           font-weight: 900;
+           font-weight: 700;
            line-height: 1;
            @include xl {
-            font-size: 5rem; 
+            font-size: 3rem; 
            }
+       }
+       p {
+           font-weight: 500;
        }
     }
 
@@ -372,6 +382,7 @@ h1, h2, h3, p {
 
     &__item {
         display: flex;
+        padding-bottom: 1.5rem;
         border-bottom: 1px solid gainsboro;
     }
 
@@ -391,20 +402,19 @@ h1, h2, h3, p {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        p {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
         
     }
     &__item-left {
         width: 80%;
-        h3 {
-            margin-bottom: 0.5rem;
-        }
-       
-       
     }
 }
 
 .divider {
-    background-color: lighten($primary, 20);
+    background-color: #FFE9CE;
     &__container {
         @include container(5rem 1rem, 600px);
         @include xl {
@@ -415,7 +425,7 @@ h1, h2, h3, p {
         text-align: center;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 2rem;
+        gap: 3rem;
         @include xl {
             grid-template-columns: repeat(3, 1fr);
         }
@@ -423,6 +433,7 @@ h1, h2, h3, p {
     img {
         margin-bottom: 1.5rem;
     }
+
 }
 
 //about
@@ -446,9 +457,7 @@ h1, h2, h3, p {
 
     &__image {
         flex: 1;
-        @include xl {
-            order: 1;
-        }
+      
         img {
             width: 100%;
         }
@@ -459,9 +468,7 @@ h1, h2, h3, p {
         display: flex;
         justify-content: center;
         align-items: center;
-        @include xl {
-            order: 2;
-        }
+        
         .above-heading {
             @include xl {
                 text-align: left;
@@ -501,7 +508,7 @@ h1, h2, h3, p {
             color: $light;
             @include container(5rem 1rem, 600px);
             @include xl {
-                @include container(10rem 1rem, 1200px);
+                @include container(7.5rem 1rem, 1200px);
             }
         }
 }
@@ -546,13 +553,14 @@ h1, h2, h3, p {
             margin-bottom: 0.5rem;
         }
 
-        h3 {
+        h4 {
             margin-bottom: 0.5rem
+
         }
 
         a {
             color: $dark;
-            font-weight: 500;
+            font-weight: 400;
             
         }
     }
