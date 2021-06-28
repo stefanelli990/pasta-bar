@@ -11,7 +11,7 @@ html {
   font-size: 0.8rem;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
   html {
     font-size: 1rem;
   }
@@ -36,6 +36,9 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 li {
@@ -44,7 +47,6 @@ li {
 
 a {
   text-decoration: none;
-  font-weight: 500;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   color: #F6F6F6;
@@ -88,7 +90,7 @@ small {
 }
 
 .logo img {
-  width: 10rem;
+  max-width: 9rem;
 }
 
 .btn {
@@ -334,6 +336,7 @@ small {
 .navbar__nav-link {
   margin-left: 1.5rem;
   color: #202020;
+  font-weight: 500;
 }
 
 .bottom-navigation {
@@ -495,14 +498,14 @@ small {
 }
 
 .showcase__text h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.3;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 600px) {
   .showcase__text h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -880,7 +883,7 @@ small {
 }
 
 .footer__container {
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 1.5rem;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -890,5 +893,9 @@ small {
 .footer__bottom {
   padding: 2rem;
   color: #F6F6F6;
+}
+
+.footer__quick-link {
+  margin: 0.5rem;
 }
 /*# sourceMappingURL=main.css.map */
