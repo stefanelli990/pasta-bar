@@ -294,7 +294,7 @@ small {
 }
 
 .navbar__container {
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
@@ -314,7 +314,7 @@ small {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -499,7 +499,7 @@ small {
 
 .showcase__text h1 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.3;
 }
 

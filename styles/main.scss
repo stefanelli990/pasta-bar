@@ -203,13 +203,13 @@ small {
     }
 
     &__container {
-        @include container(1.5rem 1rem, 600px);
+        @include container(2rem 1rem, 600px);
         display: flex;
         justify-content: center;
         align-items: center;
         @include sm {
             justify-content: space-between;
-            @include container(1.5rem 1rem, 1200px);
+            @include container(2rem 1rem, 1200px);
         }
     }
 
@@ -320,7 +320,7 @@ small {
 
        h1 {
            font-size: 2.5rem; 
-           font-weight: 700;
+           font-weight: 800;
            line-height: 1.3;
            @include sm {
                font-size: 3.5rem;
